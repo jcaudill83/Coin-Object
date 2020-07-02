@@ -1,22 +1,18 @@
 let coin = {
     state: 0,
     flip: function() {
-        var d = Math.random();
-if (d < 0.5){
-    this.state = 0
-}else {
-    this.state = 1
-}
+        this.state = Math.round (Math.random())
         
-
+        
         /* 1. Randomly set your coin object's "state" property to be either 
-           0 or 1: use "this.state" to access the "state" property on this object.*/
+        0 or 1: use "this.state" to access the "state" property on this object.*/
     },
     toString: function() {
+        coin.flip()
         if (this.state === 1) {
-            return "heads"
+            document.body.append  ("heads")
         } else {
-            return "tails"
+            document.body.append ("tails")
         }
         
 
@@ -24,23 +20,34 @@ if (d < 0.5){
            "this.state" is 0 or 1. */
     },
     toHTML: function() {
+        coin.flip()
         let image = document.createElement('img');
         if (this.state === 1) {
             
-            image.src = 'images/face-up.jpg'
+            image.src = './image/face-up.jpg'
             
         }else {
-            image.src = 'images/face-down.jpg'
+            image.src = './image/face-down.jpg'
             
             
         }
     
         /* 3. Set the properties of this image element to show either face-up
            or face-down, depending on whether this.state is 0 or 1.*/
-        return image;
+        document.body.append ("image");
     }
     
     
-       
+    
 }
 
+function display20Flips() {
+    for (index = 0; index <= 20; index += 1)
+    coin.toString()
+    
+} 
+display20Flips ()
+function display20Images() {
+    for (index = 0; index >= 20; index += 1)
+    coin.toHTML()
+}
