@@ -34,7 +34,7 @@ let coin = {
     
         /* 3. Set the properties of this image element to show either face-up
            or face-down, depending on whether this.state is 0 or 1.*/
-        document.body.append ("image");
+        document.body.append (image);
     }
     
     
@@ -42,12 +42,17 @@ let coin = {
 }
 
 function display20Flips() {
-    for (index = 0; index <= 20; index += 1)
-    coin.toString()
-    
+    for (index = 0; index <= 20; index += 1) {
+
+        coin.toString()
+        
+    }
 } 
 display20Flips ()
 function display20Images() {
-    for (index = 0; index >= 20; index += 1)
-    coin.toHTML()
+    for (index = 0; index <= 20; index += 1){
+
+        coin.toHTML()
+    }
 }
+display20Images ()
